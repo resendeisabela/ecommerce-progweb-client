@@ -78,7 +78,6 @@ export default {
           localStorage.setItem("token", JSON.stringify(response.data));
           this.token = JSON.parse(localStorage.getItem("token"));
           this.checkout();
-          this.$router.push("/");
         })
         .catch((error) => {
           console.log(error);
@@ -98,6 +97,7 @@ export default {
           console.log(response);
           alert("Compra efetuada com sucesso, " + this.token.user.name + "!");
           localStorage.clear();
+          this.$router.push("/");
         })
         .catch((error) => {
           console.log(error);
